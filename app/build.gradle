@@ -1,0 +1,54 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion versions.compileSDK
+    defaultConfig {
+        applicationId "kg.coder.placeholderproject"
+        minSdkVersion versions.minSDK
+        targetSdkVersion versions.targetSDK
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary= true
+
+        buildConfigField "String", "BASE_URL", "\"${base_url}\""
+        buildConfigField "String", "ALBUMS_ENDPOINT", "\"${albums_endpoint}\""
+        buildConfigField "String", "POSTS_ENDPOINT", "\"${posts_endpoint}\""
+        buildConfigField "String", "COMMENTS_ENDPOINT", "\"${comments_endpoint}\""
+        buildConfigField "String", "PHOTOS_ENDPOINT", "\"${photos_endpoint}\""
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility versions.java
+        targetCompatibility versions.java
+    }
+}
+
+apply from: rootProject.file('libraries.gradle')
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+
+    implementation libs.support
+    implementation libs.annotations
+    implementation libs.appCompat
+    implementation libs.design
+    implementation libs.cardView
+    implementation libs.vectorDrawable
+    implementation libs.constraintLayout
+
+    implementation libs.retrofit
+    implementation libs.retrofitConverter
+    implementation libs.glide
+    annotationProcessor libs.glideCompiler
+
+    androidTestImplementation libs.runner
+    androidTestImplementation libs.espressoCore
+    testImplementation libs.junit
+}

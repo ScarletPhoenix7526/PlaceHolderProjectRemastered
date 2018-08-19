@@ -1,0 +1,37 @@
+ext {
+    versions = [
+            java                    : JavaVersion.VERSION_1_8,
+            compileSDK              : 27,
+            targetSDK               : 27,
+            minSDK                  : 17,
+
+            support                 : '27.1.1',
+            constraintLayout        : '1.1.1',
+
+            retrofit                : '2.4.0',
+            glide                   : '4.7.1',
+
+            espresso                : '3.0.2',
+            runner                  : '1.0.2',
+            junit                   : '4.12',
+    ]
+
+    libs = [
+            support                 : "com.android.support:support-v4:${versions.support}",
+            annotations             : "com.android.support:support-annotations:${versions.support}",
+            appCompat               : "com.android.support:appcompat-v7:${versions.support}",
+            design                  : "com.android.support:design:${versions.support}",
+            cardView                : "com.android.support:cardview-v7:${versions.support}",
+            vectorDrawable          : "com.android.support:support-vector-drawable:${versions.support}",
+            constraintLayout        : "com.android.support.constraint:constraint-layout:${versions.constraintLayout}",
+
+            retrofit                : "com.squareup.retrofit2:retrofit:${versions.retrofit}",
+            retrofitConverter       : "com.squareup.retrofit2:converter-gson:${versions.retrofit}",
+            glide                   : "com.github.bumptech.glide:glide:${versions.glide}",
+            glideCompiler           : "com.github.bumptech.glide:compiler:${versions.glide}",
+
+            espressoCore            : "com.android.support.test.espresso:espresso-core:${versions.espresso}",
+            runner                  : "com.android.support.test:runner:${versions.runner}",
+            junit                   : "junit:junit:${versions.junit}"
+    ]
+}

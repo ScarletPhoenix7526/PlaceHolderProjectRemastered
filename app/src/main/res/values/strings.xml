@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">PlaceHolderProject</string>
+    <string name="title_albums">Альбомы</string>
+    <string name="title_posts">Посты</string>
+    <string name="text_internet_ok">Internet is NOT Connected!</string>
+    <string name="text_internet_not">Internet is Connected!</string>
+</resources>
